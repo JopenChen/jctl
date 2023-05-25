@@ -32,5 +32,6 @@ func GetParentPackage(dir string) (string, error) {
 		trim = strings.TrimPrefix(strings.ToLower(projectCtx.WorkDir), strings.ToLower(projectCtx.Dir))
 	}
 
+	projectCtx.Path = strings.Split(projectCtx.WorkDir, "\\src\\")[1]
 	return filepath.ToSlash(filepath.Join(projectCtx.Path, trim)), nil
 }
